@@ -58,8 +58,15 @@ cc.Class({
             this.xSpeed = this.maxMoveSpeed * this.xSpeed / Math.abs(this.xSpeed);
         }
 
-        // 根据当前速度更新主角的位置
+        let maxPositPosition = cc.winSize.width / 2 - this.node.width / 2;
+        let maxNegaPosition = -1 * cc.winSize.width / 2 + this.node.width / 2;
+        
         this.node.x += this.xSpeed * dt;
+        if(this.node.x > 0 && this.node.x >= maxPositPosition) {
+            this.node.x = maxPositPosition;
+        } else if(this.node.x < 0 && this.node.x <= maxNegaPosition) {
+            this.node.x = maxNegaPosition;
+        }
     },
 
     onKeyDown(event) {

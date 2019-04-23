@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.6314697265625,
-      "y": 0.6314697265625,
-      "z": 0.6314697265625
+      "x": 0.5625292423444059,
+      "y": 0.5625292423444059,
+      "z": 0.5625292423444059
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -140,7 +140,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Main Camera",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
@@ -492,7 +492,7 @@
       "y": 0
     },
     "_fillStart": 0,
-    "_fillRange": 0,
+    "_fillRange": 1,
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
