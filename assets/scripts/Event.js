@@ -33,6 +33,10 @@ cc.Class({
         cc.director.loadScene("game");
     },
 
+    onPlayAgain: function(event_data) {
+        cc.director.loadScene("game");
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
