@@ -675,7 +675,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "start_game_btn_event",
+    "_name": "event",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -741,7 +741,7 @@
       "__id__": 15
     },
     "_enabled": true,
-    "_id": "e0LpVNsZlH0YmKm6O08TRZ"
+    "_id": "8b4bDEeedCQKxRwxRr2Ixh"
   },
   {
     "__type__": "cc.Canvas",
