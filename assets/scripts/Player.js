@@ -64,8 +64,10 @@ cc.Class({
         this.node.x += this.xSpeed * dt;
         if(this.node.x > 0 && this.node.x >= maxPositPosition) {
             this.node.x = maxPositPosition;
+            this.xSpeed = 0;
         } else if(this.node.x < 0 && this.node.x <= maxNegaPosition) {
             this.node.x = maxNegaPosition;
+            this.xSpeed = 0;
         }
     },
 
