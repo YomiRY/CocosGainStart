@@ -12,6 +12,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        animDuration: 0,
         // 主角跳跃高度
         jumpHeight: 0,
         // 主角跳跃持续时间
@@ -32,9 +33,17 @@ cc.Class({
         // 下落
         var jumpDown = cc.moveBy(this.jumpDuration, cc.v2(0, -this.jumpHeight)).easing(cc.easeCubicActionIn());
          // 添加一个回调函数，用于在动作结束时调用我们定义的其他方法
-         var callback = cc.callFunc(this.playJumpSound, this);
-        // 不断重复
-        return cc.repeatForever(cc.sequence(jumpUp, callback, jumpDown));
+        var callback = cc.callFunc(this.playJumpSound, this);
+        var jumpSequence = cc.sequence(jumpUp, callback, jumpDown);
+
+         // 放大
+         var scale_out = cc.scaleTo(this.animDuration, 1.5, 1.5);
+         // 縮小
+         var scale_in = cc.scaleTo(this.animDuration, 1, 1);
+         var scaleSequence = cc.sequence(scale_out, scale_in);;
+
+        // 不断重复, 併發兩個sequence的animation
+        return cc.repeatForever(cc.spawn(jumpSequence, scaleSequence));
     },
 
     playJumpSound: function () {
@@ -64,8 +73,10 @@ cc.Class({
         this.node.x += this.xSpeed * dt;
         if(this.node.x > 0 && this.node.x >= maxPositPosition) {
             this.node.x = maxPositPosition;
+            this.xSpeed = 0;
         } else if(this.node.x < 0 && this.node.x <= maxNegaPosition) {
             this.node.x = maxNegaPosition;
+            this.xSpeed = 0;
         }
     },
 
