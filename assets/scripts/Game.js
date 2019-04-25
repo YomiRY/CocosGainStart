@@ -64,6 +64,7 @@ cc.Class({
         this.timer = 0;
     },
 
+
     getNewStarPosition: function () {
         var randX = 0;
         // 根据地平面位置和主角跳跃高度，随机得到一个星星的 y 坐标
@@ -99,6 +100,29 @@ cc.Class({
         this.timer += dt;
     },
 
+    onTouchStartCallback: function(event) {        
+        var loc = event.getLocation();
+
+        console.log("onTouchStartCallback = " + loc.x);
+
+        this.player.getComponent('Player').accLeft = false;
+        this.player.getComponent('Player').accRight = false;
+        if(loc.x > cc.winSize.width / 2) {
+            this.player.getComponent('Player').accRight = true;
+        } else {
+            console.log("accLeft = true");
+            this.player.getComponent('Player').accLeft = true;
+        }
+    }, 
+
+    onTouchEndCallback: function(event) {
+        var loc = event.getLocation();
+        console.log("onTouchEndCallback = " + loc.x);
+        
+        this.player.getComponent('Player').accLeft = false;
+        this.player.getComponent('Player').accRight = false;
+    }, 
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
@@ -111,10 +135,18 @@ cc.Class({
         // 获取地平面的 y 轴坐标
         this.groundY = this.ground.y + this.ground.height/2;
         // 生成一个新的星星
-        this.spawnNewStar();        
+        this.spawnNewStar();
+        
+        var touchReceiver = this.node;
+        touchReceiver.on(cc.Node.EventType.TOUCH_START, this.onTouchStartCallback, this);
+        touchReceiver.on(cc.Node.EventType.TOUCH_END, this.onTouchEndCallback, this);
     },
 
-    start() {
-
+    start() {},
+    
+    onDestroy () {
+        // var touchReceiver = cc.Canvas.instance.node;
+        // touchReceiver.off(cc.Node.EventType.TOUCH_START, this.onTouchStartCallback, this);
+        // touchReceiver.off(cc.Node.EventType.TOUCH_END, this.onTouchEndCallback, this);
     }
 });
