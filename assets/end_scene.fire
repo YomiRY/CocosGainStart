@@ -44,9 +44,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.840869140625,
-      "y": 0.840869140625,
-      "z": 0.840869140625
+      "x": 0.6314697265625,
+      "y": 0.6314697265625,
+      "z": 0.6314697265625
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -80,13 +80,16 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 17
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 17
+        "__id__": 20
       }
     ],
     "_prefab": null,
@@ -344,8 +347,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 208.89,
-      "height": 44.44
+      "width": 235,
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -355,7 +358,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 119,
+      "y": 120,
       "z": 0
     },
     "_scale": {
@@ -393,7 +396,7 @@
     "_useOriginalSize": false,
     "_string": "Game Over",
     "_N$string": "Game Over",
-    "_fontSize": 40,
+    "_fontSize": 45,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": {
@@ -451,7 +454,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -35,
+      "y": -55,
       "z": 0
     },
     "_scale": {
@@ -503,7 +506,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 90
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -513,7 +516,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 0,
+      "y": -40,
       "z": 0
     },
     "_scale": {
@@ -551,7 +554,7 @@
     "_useOriginalSize": false,
     "_string": "P l a y   A g a i n",
     "_N$string": "P l a y   A g a i n",
-    "_fontSize": 35,
+    "_fontSize": 30,
     "_lineHeight": 40,
     "_enableWrapText": false,
     "_N$file": {
@@ -744,6 +747,108 @@
     },
     "_enabled": true,
     "_id": "2cTmT4DupNSoZuWsIOMPpn"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "title_game_total_value",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_level": 1,
+    "_components": [
+      {
+        "__id__": 18
+      },
+      {
+        "__id__": 19
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 193,
+      "g": 224,
+      "b": 21,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 112.22,
+      "height": 44.44
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_quat": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_zIndex": 0,
+    "_is3DNode": false,
+    "groupIndex": 0,
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_id": "09aFGkWvxHP74V+BA6ll8S"
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 17
+    },
+    "_enabled": true,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_useOriginalSize": false,
+    "_string": "Total:",
+    "_N$string": "Total:",
+    "_fontSize": 40,
+    "_lineHeight": 40,
+    "_enableWrapText": true,
+    "_N$file": {
+      "__uuid__": "977cfe9b-21c7-498e-b060-541800511a8b"
+    },
+    "_isSystemFontUsed": false,
+    "_spacingX": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_id": "73xm/mSNZDkZWfHzyCqk36"
+  },
+  {
+    "__type__": "f683228aO9EALpus46IIvTX",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 17
+    },
+    "_enabled": true,
+    "_id": "b43/Bnxa1P977qqGWBfvI4"
   },
   {
     "__type__": "cc.Canvas",

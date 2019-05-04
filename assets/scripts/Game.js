@@ -11,7 +11,7 @@
 cc.Class({
     extends: cc.Component,
 
-    properties: {        
+    properties: {
         // 星星产生后消失时间的随机范围
         maxStarDuration: 0,
         minStarDuration: 0,
@@ -37,7 +37,7 @@ cc.Class({
         scoreDisplay: {
             default: null,
             type: cc.Label
-        }, 
+        },
 
         // 得分音效资源
         scoreAudio: {
@@ -52,7 +52,7 @@ cc.Class({
         }
     },
 
-    spawnNewStar: function() {
+    spawnNewStar: function () {
         // 使用给定的模板在场景中生成一个新节点
         var newStar = cc.instantiate(this.starPrefab);
         // 将新增的节点添加到 Canvas 节点下面
@@ -70,7 +70,7 @@ cc.Class({
         // 根据地平面位置和主角跳跃高度，随机得到一个星星的 y 坐标
         var randY = this.groundY + Math.random() * this.player.getComponent('Player').jumpHeight;
         // 根据屏幕宽度，随机得到一个星星 x 坐标
-        var maxX = this.node.width/2;
+        var maxX = this.node.width / 2;
         randX = (Math.random() - 0.5) * 2 * maxX;
         console.log('randX = ' + randX);
         // 返回星星坐标
@@ -86,8 +86,12 @@ cc.Class({
     },
 
     gameOver: function () {
+        //var self = this;
         this.player.stopAllActions(); //停止 player 节点的跳跃动作
-        cc.director.loadScene('end_scene');
+        window.global.score = this.score;
+        cc.director.loadScene('end_scene', (error, data) => {
+            //cc.director.getScene().getChildByName('Canvas').getChildByName('title_game_total_value').string = `Total:${this.score}`;        
+        });
     },
 
     update: function (dt) {
@@ -100,51 +104,53 @@ cc.Class({
         this.timer += dt;
     },
 
-    onTouchStartCallback: function(event) {        
+    onTouchStartCallback: function (event) {
         var loc = event.getLocation();
 
         console.log("onTouchStartCallback = " + loc.x);
 
         this.player.getComponent('Player').accLeft = false;
         this.player.getComponent('Player').accRight = false;
-        if(loc.x > cc.winSize.width / 2) {
+        if (loc.x > cc.winSize.width / 2) {
             this.player.getComponent('Player').accRight = true;
         } else {
             console.log("accLeft = true");
             this.player.getComponent('Player').accLeft = true;
         }
-    }, 
+    },
 
-    onTouchEndCallback: function(event) {
+    onTouchEndCallback: function (event) {
         var loc = event.getLocation();
         console.log("onTouchEndCallback = " + loc.x);
-        
+
         this.player.getComponent('Player').accLeft = false;
         this.player.getComponent('Player').accRight = false;
-    }, 
+    },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
+    onLoad() {
         // 初始化计时器
         this.timer = 0;
         this.starDuration = 4;
+        //this.transitNode = this.node;
+        //cc.game.addPersistRootNode(this.transitNode);
 
         // 初始化计分
         this.score = 0;
         // 获取地平面的 y 轴坐标
-        this.groundY = this.ground.y + this.ground.height/2;
+        this.groundY = this.ground.y + this.ground.height / 2;
         // 生成一个新的星星
         this.spawnNewStar();
-        
+
         var touchReceiver = this.node;
         touchReceiver.on(cc.Node.EventType.TOUCH_START, this.onTouchStartCallback, this);
         touchReceiver.on(cc.Node.EventType.TOUCH_END, this.onTouchEndCallback, this);
     },
 
-    start() {},
-    
-    onDestroy () {
+    start() { },
+
+    onDestroy() {
         // var touchReceiver = cc.Canvas.instance.node;
         // touchReceiver.off(cc.Node.EventType.TOUCH_START, this.onTouchStartCallback, this);
         // touchReceiver.off(cc.Node.EventType.TOUCH_END, this.onTouchEndCallback, this);

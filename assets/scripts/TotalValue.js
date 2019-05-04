@@ -14,20 +14,14 @@ cc.Class({
     properties: {
     },
 
-    onStartGame: function(event_data) {
-        window.global = {};
-        cc.director.loadScene("game");
-    },
-
-    onPlayAgain: function(event_data) {
-        cc.director.loadScene("game");
-    },
-
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start () {},
+    start () {
+        this.node.getComponent(cc.Label).string = `Total:${window.global.score}`;
+        delete window.global.score;
+    },
 
     // update (dt) {},
 });
