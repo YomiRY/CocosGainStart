@@ -15,7 +15,6 @@ cc.Class({
     },
 
     onStartGame: function(event_data) {
-        window.global = {};
         cc.director.loadScene("game");
     },
 
