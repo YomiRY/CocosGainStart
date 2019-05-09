@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5625292423444059,
-      "y": 0.5625292423444059,
-      "z": 0.5625292423444059
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -103,7 +103,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
+      "width": 1024,
       "height": 640
     },
     "_anchorPoint": {
@@ -113,7 +113,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 480,
+      "x": 512,
       "y": 320,
       "z": 0
     },
@@ -493,7 +493,7 @@
     },
     "_fillStart": 0,
     "_fillRange": 1,
-    "_isTrimmedMode": true,
+    "_isTrimmedMode": false,
     "_state": 0,
     "_atlas": null,
     "_id": "89xK4TEFpKYLJ34sR51VTt"
@@ -506,6 +506,7 @@
       "__id__": 9
     },
     "_enabled": true,
+    "animDuration": 0.3,
     "jumpHeight": 200,
     "jumpDuration": 0.3,
     "maxMoveSpeed": 400,
@@ -614,7 +615,7 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 960,
+      "width": 1024,
       "height": 640
     },
     "_fitWidth": false,
