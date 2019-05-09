@@ -6,4 +6,4 @@ Currently, you can play game and use keyevent A(left) and D(right) to control th
 <a href='https://github.com/YomiRY/StarCatcher/blob/feature/adjust_readme_resources/readme_resources/android_v1.2.0b1.apk'><img alt='Download android apk' src='https://github.com/YomiRY/StarCatcher/blob/feature/adjust_readme_resources/readme_resources/android_download.jpg' width='220px'/></a>
 ![v1.1.0](readme_resources/game_snapshot_v1.1.0_1.png)
 ![v1.1.0](readme_resources/game_snapshot_v1.1.0_2.png)
-![v1.1.0](readme_resources/game_snapshot_v1.1.0_3.png)
+![v1.1.0](readme_resources/game_snapshot_v1.2.0_3.png)
