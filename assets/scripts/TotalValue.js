@@ -19,8 +19,7 @@ cc.Class({
     // onLoad () {},
 
     start () {
-        this.node.getComponent(cc.Label).string = `Total:${window.global.score}`;
-        delete window.global.score;
+        this.node.getComponent(cc.Label).string = `Total:${cc.sys.localStorage.getItem('score')}`;
     },
 
     // update (dt) {},

@@ -87,8 +87,9 @@ cc.Class({
 
     gameOver: function () {
         //var self = this;
-        this.player.stopAllActions(); //停止 player 节点的跳跃动作
-        window.global.score = this.score;
+        this.player.stopAllActions(); //停止 player 节点的跳跃动作        
+        cc.sys.localStorage.setItem('score', this.score);
+        console.log(`this.score = ${this.score}, localstorage.score = ${cc.sys.localStorage.getItem('score')}`);
         cc.director.loadScene('end_scene', (error, data) => {
             //cc.director.getScene().getChildByName('Canvas').getChildByName('title_game_total_value').string = `Total:${this.score}`;        
         });
